@@ -2,7 +2,10 @@ const express=require("express");
 const cors=require("cors");
 const connect = require("./config/db");
 require('dotenv').config();
-const Player_Router=require("./Router/player.router")
+const Player_Router=require("./Router/player.router");
+
+
+
 
 const app=express();
 app.use(cors())
@@ -12,6 +15,8 @@ app.use("/",Player_Router)
 app.get("/",(req,res)=>{
     res.status(200).send("Home Page");
 })
+
+
 
 
 const PORT=process.env.PORT||8080;
